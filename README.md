@@ -52,6 +52,10 @@ data set for the period.
 
 Rails, MySQL, and Bootstrap. Testing with Rspec and Capybara.
 
+## stuff I did because this is a 'work sample'
+* commits are not squashed. I so wish that the first time I commited 'authentication working' that authentication was always working, but I wanted to give you, dear reader, an accurate sense of my process. Therefore the commit history is intact
+* the DB config has no password, a terrible idea even if your local doesn't have 'real' production data
+
 # TODO
 Add 'new/create reading' controller
 make sure that attempts to put in a 5th reading for a given day fail
