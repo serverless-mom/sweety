@@ -43,7 +43,8 @@ data set for the period.
 
 # Some decisions I made
 * in this test version, the user will be able to set an arbitrary date for data entry. The production version will probably default to 'today' with an option to fill in the last few days, but this will depend on stakeholder requirements
-* Rails validations don't guarantee security/validity, but since the only route available will be to *enter* blood glucose values, this doesn't seem like a major concern. It's hard to imagine the goal of someone maliciously adding invalid glucose values, so I won't do any fancy MySQL-layer validations
+* If the UI is very strict, we might use created_at to base our reports, but since we're not doing that I'm using the somewhat-awkwardly-named `date_measured` column
+* Rails validations don't guarantee security/validity, but since the only route available will be to *enter* blood glucose values, this doesn't seem like a major concern. It's hard to imagine the goal of someone maliciously adding invalid glucose values, so I won't do any fancy MySQL-layer constraints
 * Devise to validate users. 
 * Users will be created with a 'provider_id' to allow us to later connect a medical 'supervisor' role
 
