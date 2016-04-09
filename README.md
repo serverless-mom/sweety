@@ -1,24 +1,52 @@
+Sweety
+———————
+Sweety is a simple web application which enables a user to input and 
+track blood glucose readings and view reports on those readings.
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+Users
+———————
+The typical user of the Sweety application is a diabetes patient who is 
+checking his or her blood glucose levels several times a day. These 
+individuals are looking for a method to keep track of their readings 
+on a daily basis and examine monthly trends.
 
+In the future, doctors may also have access to this application to 
+review patient entered blood glucose levels and review the same daily 
+and monthly data.
 
-Welcome to your Rails project on Cloud9 IDE!
+Functionality
+————————-
+The applications functionality relates to two core features: entering 
+blood glucose level readings and view reports on those readings.
 
-To get started, just do the following:
+Data Entry
+A user should be able to enter data up to four times per day. Data is 
+entered as a single integer value representing blood glucose levels 
+(measured in mg/dl). Data should be validated to ensure that a level is 
+included in the entry and that there are no more than 4 entries on a given day.
 
-1. Run the project with the "Run Project" button in the menu bar on top of the IDE.
-2. Preview your new app by clicking on the URL that appears in the Run panel below (https://sweety-app-tobyfee.c9users.io/).
+the range for blood glucose readings in mg/dl is between 0 and 400.
 
-Happy coding!
-The Cloud9 IDE team
+Reports
+—————-
+A user should be able to view reports of their data. There are three 
+kinds of reports: daily report, month to date report, and monthly 
+report. With a date selector, the user should be able to select the 
+end date of the report. For daily reports, data will represent entries 
+from that day. For month to date reports, data will start on the first 
+of the month for the selected date and end on that date. For monthly 
+reports, reports will include data spanning the month the previous monthly period (last 30 days).
 
+Reports should include three data points: a maximum reading from the time 
+period, a minimum reading for the time period, and an average of the whole 
+data set for the period.
 
-## Support & Documentation
+# Some decisions I made
+* in this test version, the user will be able to set an arbitrary date for data entry. The production version will probably default to 'today' with an option to fill in the last few days, but this will depend on stakeholder requirements
+* Rails validations don't guarantee security/validity, but since the only route available will be to *enter* blood glucose values, this doesn't seem like a major concern. It's hard to imagine the goal of someone maliciously adding invalid glucose values, so I won't do any fancy MySQL-layer validations
+* Devise to validate users. 
+* Users will be created with a 'provider_id' to allow us to later connect a medical 'supervisor' role
 
-Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE. 
-To watch some training videos, visit http://www.youtube.com/user/c9ide
+Technology
+————————
+Rails, MySQL, and Bootstrap. Testing with Rspec and Capybara.
