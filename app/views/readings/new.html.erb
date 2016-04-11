@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@reading) do |f| %>
+      <%= f.label :glucose_level %>
+      <%= f.number_field :glucose_level, min: 0%>
+      <%= f.label :date_measured %>
+      <%= f.date_field :date_measured, max: Date.today%>
+      
+
+      <%= f.submit "Submit Reading", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

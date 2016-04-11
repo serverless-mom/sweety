@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  get 'reading/new'
+
 
   devise_for :users
   root 'dashboard#index'
+  resources :users
+  resources :readings
+
 end

@@ -8,9 +8,11 @@ gem 'uglifier',     '2.5.3'
 gem 'coffee-rails', '4.1.0'
 gem 'jquery-rails', '4.0.3'
 gem 'turbolinks',   '2.3.0'
-gem 'jbuilder',     '2.2.3'
+
 
 # Specific to this project
+gem 'jbuilder',     '2.2.3'
+gem 'bootstrap-sass',       '3.2.0.0'
 gem 'devise'
 gem 'mysql2'
 
