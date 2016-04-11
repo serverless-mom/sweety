@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160409191600) do
+ActiveRecord::Schema.define(version: 20160411033247) do
 
   create_table "readings", force: :cascade do |t|
     t.integer  "user_id",       limit: 4
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20160409191600) do
     t.datetime "updated_at",              null: false
   end
 
+  add_index "readings", ["date_measured"], name: "index_readings_on_date_measured", using: :btree
   add_index "readings", ["user_id"], name: "index_readings_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|

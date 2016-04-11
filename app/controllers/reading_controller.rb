@@ -1,4 +1,4 @@
-class DashboardController < ApplicationController 
-  def index
+class ReadingController < ApplicationController
+  def new
   end
 end
