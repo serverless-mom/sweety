@@ -13,4 +13,8 @@ class UserTest < ActiveSupport::TestCase
     @user.email = "      "
     assert_not @user.valid?
   end
+  
+  test "returns a daily average" do
+    assert @user.daily_average
+  end
 end
