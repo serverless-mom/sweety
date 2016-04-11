@@ -28,7 +28,6 @@ bower.json
 # Ignore bundler config.
 /.bundle
 
-bin/
 Makefile
 *.dSYM
 *.o
