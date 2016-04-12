@@ -1,0 +1,27 @@
+
+<h2>Here's how today is going:</h2>
+<ul class="list-group">
+<li class="list-group-item active">Today</li>
+<% report = @user.daily_average %>
+<% report.each do |name, value| %>
+  <li class="list-group-item"><%= name %>   <span class="badge"><%= value.round(1) %></span></li>
+<% end %>
+</ul>
+
+<h2>The month so far</h2>
+<ul class="list-group">
+<li class="list-group-item active">From: <%= Date.today.beginning_of_month %> To: <%= Date.today %> </li>
+<% report = @user.month_to_date_average %>
+<% report.each do |name, value| %>
+  <li class="list-group-item"><%= name %>   <span class="badge"><%= value.round(1) %></span></li>
+<% end %>
+</ul>
+
+<h2>How you've done since a month ago</h2>
+<ul class="list-group">
+<li class="list-group-item active">From:  <%= Date.today.prev_month %> To: <%= Date.today %> </li>
+<% report = @user.last_month_average(Date.today) %>
+<% report.each do |name, value| %>
+  <li class="list-group-item"><%= name %>   <span class="badge"><%= value.round(1) %></span></li>
+<% end %>
+</ul>
