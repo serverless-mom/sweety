@@ -1,4 +1,4 @@
-# Sweety
+# Sweety - Requirements
 
 Sweety is a simple web application which enables a user to input and 
 track blood glucose readings and view reports on those readings.
@@ -40,6 +40,14 @@ reports, reports will include data spanning the month the previous monthly perio
 Reports should include three data points: a maximum reading from the time 
 period, a minimum reading for the time period, and an average of the whole 
 data set for the period.
+
+# Setup
+1. clone this repo
+2. get Ruby and Bundler working on your system
+2. `bundle install`
+3. Install and start Postgres
+4. configure config/database.yml with a username and more useful DB name
+5. Start as normal with `rails server`
 
 ## Some decisions I made
 * in this test version, the user will be able to set an arbitrary date for data entry. The production version will probably default to 'today' with an option to fill in the last few days, but this will depend on stakeholder requirements
