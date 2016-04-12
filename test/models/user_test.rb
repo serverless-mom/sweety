@@ -17,4 +17,8 @@ class UserTest < ActiveSupport::TestCase
   test "returns a daily average" do
     assert @user.daily_average
   end
+  
+  test "returns month_to_date_average" do
+    assert @user.month_to_date_average
+  end
 end

@@ -46,16 +46,15 @@ data set for the period.
 * If the UI is very strict, we might use created_at to base our reports, but since we're not doing that I'm using the somewhat-awkwardly-named  `date_measured` column
 * Rails validations don't guarantee security/validity, but since the only route available will be to *enter* blood glucose values, this doesn't seem like a major concern. It's hard to imagine the goal of someone maliciously adding invalid glucose values, so I won't do any fancy MySQL-layer constraints
 * Devise to validate users. 
-* Users will be created with a 'provider_id' to allow us to later connect a medical 'supervisor' role
+
 
 ## Technology
 
-Rails, MySQL, and Bootstrap. Testing with Rspec and Capybara.
+Rails, MySQL, and Bootstrap. Testing with Minitest
 
 ## stuff I did because this is a 'work sample'
 * commits are not squashed. I so wish that the first time I commited 'authentication working' that authentication was always working, but I wanted to give you, dear reader, an accurate sense of my process. Therefore the commit history is intact
 * the DB config has no password, a terrible idea even if your local doesn't have 'real' production data
 
 # TODO
-Add 'new/create reading' controller
-make sure that attempts to put in a 5th reading for a given day fail
+* 'last month' reporting just takes 'today' as the end date, the next version should have a page before 'reports' where you select a date range.

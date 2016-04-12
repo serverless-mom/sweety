@@ -12,9 +12,9 @@ class ReadingsController < ApplicationController
     @reading = current_user.readings.build(reading_params)
     if @reading.save
       flash[:success] = "reading saved, thank you!"
-      redirect_to @reading
+      redirect_to root_path
     else
-      flash[:error] = "This reading could not be recorded! #{@reading.errors.messages}"
+      flash[:warning] = "This reading could not be recorded! #{@reading.errors.messages}"
       render 'new'
     end
   end
